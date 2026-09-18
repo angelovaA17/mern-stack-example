@@ -1,6 +1,9 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-const URI = process.env.ATLAS_URI || "";
+// const URI = process.env.ATLAS_URI || "";
+// const URI = "mongodb://127.0.0.1:27017/mern-app";
+// const URI = "mongodb://mongo:27017/mern-app";
+const URI = process.env.ATLAS_URI;
 const client = new MongoClient(URI, {
   serverApi: {
     version: ServerApiVersion.v1,
