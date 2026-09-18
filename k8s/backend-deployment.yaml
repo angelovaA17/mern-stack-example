@@ -1,3 +1,32 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: backend
+#   namespace: mern-app
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: backend
+#   template:
+#     metadata:
+#       labels:
+#         app: backend
+#     spec:
+#       containers:
+#         - name: backend
+#           image: mern-backend
+#           imagePullPolicy: Never
+#           ports:
+#             - containerPort: 5050
+#           # env:
+#           #   - name: ATLAS_URI
+#           #     value: "mongodb://mongo:27017/employees"
+
+#           env:
+#         - name: ATLAS_URI
+#           value: "mongodb://mongo:pass@mongo:27017/employees?authSource=admin"
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,4 +50,4 @@ spec:
             - containerPort: 5050
           env:
             - name: ATLAS_URI
-              value: "mongodb://mongo:27017/employees"
+              value: "mongodb://mongo:pass@mongo:27017/employees?authSource=admin"
