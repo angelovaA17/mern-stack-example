@@ -35,3 +35,7 @@ jobs:
           context: ./mern/client
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/mern-frontend:latest
+
+      - name: Debug secret
+        run: |
+         echo "VALUE='${{ secrets.DOCKER_USERNAME }}'"
